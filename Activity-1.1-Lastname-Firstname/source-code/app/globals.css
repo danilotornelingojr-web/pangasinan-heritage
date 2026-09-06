@@ -1,0 +1,525 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f8fb;
+  color: #243746;
+  min-height: 100vh;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  min-height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #555555;
+}
+
+nav a:hover {
+  color: #087f72;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 80px 6%;
+  background: #eef6fa;
+}
+
+.hero p:first-child {
+  color: #117a72;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 55px;
+  line-height: 1.1;
+  max-width: 650px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.heroText {
+  max-width: 650px;
+  line-height: 1.8;
+  color: #66737d;
+}
+
+/* =========================
+   HERITAGE SECTION
+========================= */
+
+.section {
+  padding: 55px 6%;
+}
+
+.heritage-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 20px;
+}
+
+.cardBody h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.cardBody p {
+  color: #68757d;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   EXPLORE BUTTON
+========================= */
+
+.exploreButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #087f72;
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  min-height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.exploreButton:hover {
+  background: #05665c;
+}
+
+.exploreButton:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   DETAIL MODAL
+========================= */
+
+.heritageModal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  z-index: 9999;
+
+  overflow-y: auto;
+}
+
+/* MAIN MODAL BOX */
+
+.heritageModalContent {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  max-height: 92vh;
+
+  background: #ffffff;
+  border-radius: 18px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   MODAL IMAGE
+========================= */
+
+.modalImageWrapper {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+
+.modalImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   MODAL CLOSE
+========================= */
+
+.modalClose {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 28px;
+  line-height: 1;
+
+  cursor: pointer;
+  z-index: 10;
+
+  transition: background 0.2s ease;
+}
+
+.modalClose:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.modalContent {
+  width: 100%;
+  padding: 30px 34px 34px;
+}
+
+.modalLocation {
+  color: #087f72 !important;
+  font-size: 14px !important;
+  font-weight: 600;
+  margin-bottom: 10px !important;
+}
+
+.modalContent h2 {
+  color: #243746;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.modalContent section {
+  margin-bottom: 24px;
+}
+
+.modalContent section h3 {
+  color: #243746;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.modalContent p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #59656d;
+  margin-bottom: 0;
+}
+
+/* =========================
+   ACTIVITIES
+========================= */
+
+.activityList {
+  padding-left: 20px;
+  color: #59656d;
+}
+
+.activityList li {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+/* =========================
+   MODAL ACTIONS
+========================= */
+
+.modalActions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eeeeee;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .heritageModal {
+    padding: 18px;
+  }
+
+  .heritageModalContent {
+    max-width: 760px;
+  }
+
+  .modalImageWrapper {
+    height: 320px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+
+  nav {
+    min-height: 58px;
+    padding: 0 20px;
+  }
+
+  nav a {
+    margin-left: 12px;
+    font-size: 13px;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding: 55px 20px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.12;
+  }
+
+  .heroText {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* SECTION */
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  .heritage-title {
+    font-size: 22px;
+  }
+
+  /* GRID */
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* CARD */
+
+  .card img {
+    height: 220px;
+  }
+
+  .cardBody {
+    padding: 18px;
+  }
+
+  .cardBody h3 {
+    font-size: 19px;
+  }
+
+  /* MODAL */
+
+  .heritageModal {
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 12px;
+
+    overflow-y: auto;
+  }
+
+  .heritageModalContent {
+    width: 100%;
+    max-width: 100%;
+
+    max-height: calc(100vh - 24px);
+
+    border-radius: 15px;
+  }
+
+  .modalImageWrapper {
+    height: 230px;
+  }
+
+  .modalContent {
+    padding: 22px 20px 25px;
+  }
+
+  .modalContent h2 {
+    font-size: 27px;
+    margin-bottom: 22px;
+  }
+
+  .modalContent section {
+    margin-bottom: 21px;
+  }
+
+  .modalContent section h3 {
+    font-size: 17px;
+  }
+
+  .modalContent p,
+  .activityList li {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .modalClose {
+    top: 10px;
+    right: 10px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 24px;
+  }
+
+  .modalActions {
+    margin-top: 25px;
+    padding-top: 18px;
+  }
+
+  .exploreButton {
+    min-height: 40px;
+    padding: 10px 17px;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .heritageModal {
+    padding: 8px;
+  }
+
+  .heritageModalContent {
+    max-height: calc(100vh - 16px);
+    border-radius: 13px;
+  }
+
+  .modalImageWrapper {
+    height: 200px;
+  }
+
+  .modalContent {
+    padding: 20px 16px 22px;
+  }
+
+  .modalContent h2 {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,3 @@
+export default function Typography({ as: Tag = 'p', children, className = '' }) {
+  return <Tag className={className}>{children}</Tag>;
+}
