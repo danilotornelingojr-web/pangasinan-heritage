@@ -5,19 +5,19 @@ const sites = [
     title: "Hundred Islands",
     description:
       "A landmark island group in Alaminos, Pangasinan, known for its distinctive limestone formations and beautiful coastal scenery.",
-    image: "/hundred-islands.jpeg",
+    image: "/pangasinan-heritage/hundred-islands.jpeg",
   },
   {
     title: "Bolinao Lighthouse",
     description:
       "A historic coastal landmark overlooking the sea in Bolinao, Pangasinan, known for its scenic view and cultural significance.",
-    image: "/bolinao-lighthouse.jpg",
+    image: "/pangasinan-heritage/bolinao-lighthouse.jpg",
   },
   {
     title: "Balungao Hot Spring",
     description:
       "A natural attraction in Balungao, Pangasinan associated with relaxing hot spring experiences and beautiful surroundings.",
-    image: "/balungao-hot-spring.webp",
+    image: "/pangasinan-heritage/balungao-hot-spring.webp",
   },
 ];
 
